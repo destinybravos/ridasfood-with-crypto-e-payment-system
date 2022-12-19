@@ -1,0 +1,45 @@
+.max-w-8xl {
+    max-width: 90rem/* 1280px */;
+}
+.bg-btn-color{
+    background-color: #ff683a;
+}
+.border-my-800{
+    border-color: #ee4714;
+}
+.text-red-custom{
+    color: #ff683a;
+}
+.bg-my-50{
+    background: #fab19b;
+}
+.bg-my-100{
+    background: #ffa98f;
+}
+.bg-my-200{
+    background: #ff8e6c;
+}
+.bg-my-300{
+    background: #e98669;
+}
+.bg-my-400{
+    background: #ff8059;
+}
+.border-my-400{
+    border-color: #ff8059;
+}
+.bg-my-500{
+    background: #ff683a;
+}
+.bg-my-600{
+    background: #ff5724;
+}
+.bg-my-700{
+    background: #ff521d;
+}
+.bg-my-800{
+    background: #ee4714;
+}
+.bg-my-900{
+    background: #fc3e04;
+}
