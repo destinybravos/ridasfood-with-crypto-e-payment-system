@@ -12,7 +12,10 @@
     <body>
         <div class="">
             <?php
+                include_once 'auth/connect.php';
                 include_once 'appmenu.php';
+                $request = (isset($_GET['request']) && $_GET['request'] != '') ? $_GET['request'] : 'all';
+                $recipes = $conn->query("SELECT * FROM recipe");
             ?>
             <div class="bg-red-50 w-full">
                 <div class="" style="height: 92vh">
@@ -51,20 +54,17 @@
                         <div class="flex-grow text-4xl font-extrabold">Our Menu</div>
                         <div class="flex items-center gap-10 capitalize">
                             <a href="menu.php?request=all" class="">
-                                <span class="text-red-400 font-bold border-b border-red-400">all</span>
+                                <span class="<?php echo $request == 'all' ? 'text-red-400 font-bold border-b border-red-400' : '' ?>">all</span>
                             </a>
-                            <a href="menu.php?request=burger" class="">
-                                <span class="">burger</span>
+                            <?php
+                                while ($recipe = $recipes->fetch_assoc()) {
+                            ?>
+                            <a href="menu.php?request=<?php echo $recipe['name'] ?>" class="">
+                                <span class="<?php echo $request == $recipe['name'] ? 'text-red-400 font-bold border-b border-red-400' : '' ?>"><?php echo $recipe['name'] ?></span>
                             </a>
-                            <a href="menu.php?request=sushi" class="">
-                                <span class="">sushi</span>
-                            </a>
-                            <a href="menu.php?request=cake" class="">
-                                <span class="">cake</span>
-                            </a>
-                            <a href="menu.php?request=drink" class="">
-                                <span class="">drink</span>
-                            </a>
+                            <?php
+                                }
+                            ?>
                         </div>
                     </div>
                     <div class="grid gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-3" id="dishlist">
@@ -227,7 +227,6 @@
     <script src="assets/js/jquery.js"></script>
     <script src="custom.js"></script>
     <script>
-            
         function fetchDish() {
             $.ajax({
                 type:'post',

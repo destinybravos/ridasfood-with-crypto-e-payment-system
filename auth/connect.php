@@ -1,3 +1,3 @@
 <?php
-    $conn = new MySQLi('localhost', 'root', '', 'project2021_ridas');
+    $conn = new MySQLi('localhost', 'root', '', 'ridas');
 ?>

@@ -20,7 +20,13 @@
         }
         // Fetch All Dish Information
         elseif ($action == 'fetch_all'){
-            $query = $conn->query("SELECT * FROM dish ORDER BY foodName");
+            $request = isset($_POST['recipe']) && $_POST['recipe'] !== 'all' ? $_POST['recipe'] : 'all';
+            if ($request == 'all') {
+                $query = $conn->query("SELECT * FROM dish ORDER BY foodName");
+            } else {
+                $recipe_id = getRecipeID($request, $conn);
+                $query = $conn->query("SELECT * FROM dish WHERE recipe='$recipe_id' ORDER BY foodName");
+            }
             if($query->num_rows > 0){
                 $dishes = [];
                 while($dish = $query->fetch_assoc()){
@@ -78,5 +84,11 @@
         $query = $conn->query("SELECT id, name FROM recipe WHERE id='$recipe_id'");
         $recipe = $query->fetch_assoc();
         return $recipe;
+    }
+
+    function getRecipeID($recipe, $conn): int {
+        $queryExec = $conn->query("SELECT id FROM recipe WHERE name='$recipe'");
+        $recipe = $queryExec->fetch_assoc();
+        return (int)$recipe['id'];
     }
 ?>

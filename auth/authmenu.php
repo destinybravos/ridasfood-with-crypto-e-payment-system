@@ -16,11 +16,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/tailwind.css">
-    <link rel="stylesheet" href="../assets/fa/css/all.css">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="stylesheet" href="assets/fa/css/all.css">
     <link rel="stylesheet" href="custom.css">
-    <link rel="stylesheet" href="../assets/material_icon/material-icons.css">
-    <!-- <link rel="stylesheet" href="../assets/remixicon/remixicon.css"> -->
+    <link rel="stylesheet" href="assets/material_icon/material-icons.css">
+    <!-- <link rel="stylesheet" href="assets/remixicon/remixicon.css"> -->
     <title><?php echo $title?></title>
 </head>
 <body class="" style="font-family:'Bahnschrift">
@@ -104,7 +104,7 @@
                                 <?php echo $username ?>
                             </div>
                         </div>
-                        <img src="../assets/avatars/3.jpeg" class="w-12 h-12 rounded-full" srcset="">
+                        <img src="assets/avatars/3.jpeg" class="w-12 h-12 rounded-full" srcset="">
                     </div>
                     <!-- <div class="beller bg-white h-12 w-12 cursor-pointer relative flex justify-center items-center rounded-full">
                         <a href="" class="hidden md:block">
@@ -140,7 +140,7 @@
                         </div>
                         <div class="capitalize text-sm" style="font-family:'Bahnschrift'"><?php echo $username ?></div>
                     </div>
-                    <img src="../assets/avatars/3.jpeg" class="w-8 h-8 rounded-full" srcset="">
+                    <img src="assets/avatars/3.jpeg" class="w-8 h-8 rounded-full" srcset="">
                 </div>
                 <!-- <div class="beller bg-white h-8 w-8 cursor-pointer relative flex justify-center items-center rounded-full">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -158,7 +158,7 @@
         </div>
     </div>
 </body>
-<script src="../assets/js/jquery.js"></script>
-<script src="../assets/fa/js/all.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/fa/js/all.js"></script>
 <script src="custom.js"></script>
 </html>
